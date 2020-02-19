@@ -1,3 +1,5 @@
+import { TrimPipe } from './../core/pipes/trim.pipe';
+import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,7 +8,7 @@ import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
-  declarations: [CommentsComponent],
+  declarations: [CommentsComponent, CommentDetailComponent, TrimPipe],
   imports: [
     CommonModule,
     CommentsRoutingModule

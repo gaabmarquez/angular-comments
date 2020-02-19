@@ -10,11 +10,11 @@
       <div *ngFor="let comment of comments" class="card  my-4">
         <div class="card-body pointer" [routerLink]="['/comments', comment.id]"
           [queryParams]="{postId: postId , id: comment.id, name: comment.name, email: comment.email, body: comment.body}">
-          <h5>{{comment.name }}</h5>
+          <h5>{{comment.name | trim: 20}}</h5>
           <span>{{comment.email}}</span>
           <hr>
           <p>
-            {{comment.body }}
+            {{comment.body | trim: 30}}
           </p>
         </div>
       </div>
