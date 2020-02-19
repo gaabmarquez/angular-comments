@@ -8,7 +8,7 @@ import { Comment } from 'src/app/core/models/comment.model';
   styleUrls: ['./comment-detail.component.scss']
 })
 export class CommentDetailComponent {
-  comment = {}
+  comment: Comment;
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {

@@ -10,17 +10,26 @@ import { Comment } from 'src/app/core/models/comment.model';
 export class CommentsComponent implements OnInit {
   // hardcoded postId , TODO: in the future this id should be taken from query params
   postId = 1;
+  loading = false;
   @Input() comments: Comment[] = [];
 
   constructor(private commentService: CommentsService) { }
 
   ngOnInit() {
-    this.commentService.getComments(this.postId).subscribe(resp => {
-      this.comments = resp;
-      console.log(resp)
-    }, err => {
-      console.log(err)
-    })
+
+    this.loading = true;
+
+      this.commentService.getComments(this.postId).subscribe(resp => {
+        this.comments = resp;
+        this.loading = false;
+
+        console.log(resp)
+      }, err => {
+        console.log(err)
+        this.loading = false;
+
+      })
+
   }
 
 }

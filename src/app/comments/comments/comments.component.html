@@ -1,17 +1,18 @@
 <div class="container mt-4">
-  <div class="row mb-4">
-    <h2>All Comments for post {{postId}}</h2>
-    <br>
-    <hr>
+  <h2 class="title">All Comments for post {{postId}} ({{comments?.length}})</h2>
+
+  <div *ngIf="loading" class="d-flex loading-container">
+    <i class="fas fa-spinner fa-spin fa-10x"></i>
+
   </div>
 
-  <div class="row">
+  <div *ngIf="!loading">
     <div class="comments-container">
-      <div *ngFor="let comment of comments" class="card  my-4">
-        <div class="card-body pointer" [routerLink]="['/comments', comment.id]"
+      <div *ngFor="let comment of comments" class="card comment  my-2">
+        <div class="card-body comment-body" [routerLink]="['/comments', comment.id]"
           [queryParams]="{postId: postId , id: comment.id, name: comment.name, email: comment.email, body: comment.body}">
           <h5>{{comment.name | trim: 20}}</h5>
-          <span>{{comment.email}}</span>
+          <span class="email">{{comment.email}}</span>
           <hr>
           <p>
             {{comment.body | trim: 30}}
@@ -20,4 +21,6 @@
       </div>
     </div>
   </div>
+
+
 </div>

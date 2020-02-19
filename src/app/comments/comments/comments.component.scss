@@ -1,8 +1,28 @@
-.view-full-comment {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+.comment {
+  min-width: 450px;
+  .comment-body {
+    cursor: pointer;
+    padding: 0.8em;
+    max-width: 450px;
   }
-  .pointer{
-      cursor: pointer;
-  }
+}
+
+.loading-container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 8em;
+}
+
+.email {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.title {
+  margin-bottom: 2em;
+}
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
