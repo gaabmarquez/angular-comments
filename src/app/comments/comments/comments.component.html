@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="row mb-4">
+    <h2>All Comments for post {{postId}}</h2>
+    <br>
+    <hr>
+  </div>
+
+  <div class="row">
+    <div class="comments-container">
+      <div *ngFor="let comment of comments" class="card  my-4">
+        <div class="card-body pointer" [routerLink]="['/comments', comment.id]"
+          [queryParams]="{postId: postId , id: comment.id, name: comment.name, email: comment.email, body: comment.body}">
+          <h5>{{comment.name }}</h5>
+          <span>{{comment.email}}</span>
+          <hr>
+          <p>
+            {{comment.body }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

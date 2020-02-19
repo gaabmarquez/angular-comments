@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CommentsComponent } from './comments.component';
+import { CommentsComponent } from './comments/comments.component';
 
 const routes: Routes = [{ path: '', component: CommentsComponent }];
 
